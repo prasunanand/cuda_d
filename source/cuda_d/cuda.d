@@ -1452,73 +1452,22 @@ enum cudaError_enum
 
 alias CUresult = cudaError_enum;
 
-/**
- * CUDA stream callback
- * \param hStream The stream the callback was added to, as passed to ::cuStreamAddCallback.  May be NULL.
- * \param status ::CUDA_SUCCESS or any persistent error on the stream.
- * \param userData User parameter provided at registration.
- */
 alias CUstreamCallback = void function (CUstream hStream, CUresult status, void* userData);
 
-/**
- * Block size to per-block dynamic shared memory mapping for a certain
- * kernel \param blockSize Block size of the kernel.
- *
- * \return The dynamic shared memory needed by a block.
- */
 alias CUoccupancyB2DSize = c_ulong function (int blockSize);
 
-/**
- * If set, host memory is portable between CUDA contexts.
- * Flag for ::cuMemHostAlloc()
- */
 enum CU_MEMHOSTALLOC_PORTABLE = 0x01;
 
-/**
- * If set, host memory is mapped into CUDA address space and
- * ::cuMemHostGetDevicePointer() may be called on the host pointer.
- * Flag for ::cuMemHostAlloc()
- */
 enum CU_MEMHOSTALLOC_DEVICEMAP = 0x02;
 
-/**
- * If set, host memory is allocated as write-combined - fast to write,
- * faster to DMA, slow to read except via SSE4 streaming load instruction
- * (MOVNTDQA).
- * Flag for ::cuMemHostAlloc()
- */
 enum CU_MEMHOSTALLOC_WRITECOMBINED = 0x04;
 
-/**
- * If set, host memory is portable between CUDA contexts.
- * Flag for ::cuMemHostRegister()
- */
 enum CU_MEMHOSTREGISTER_PORTABLE = 0x01;
 
-/**
- * If set, host memory is mapped into CUDA address space and
- * ::cuMemHostGetDevicePointer() may be called on the host pointer.
- * Flag for ::cuMemHostRegister()
- */
 enum CU_MEMHOSTREGISTER_DEVICEMAP = 0x02;
 
-/**
- * If set, the passed memory pointer is treated as pointing to some
- * memory-mapped I/O space, e.g. belonging to a third-party PCIe device.
- * On Windows the flag is a no-op.
- * On Linux that memory is marked as non cache-coherent for the GPU and
- * is expected to be physically contiguous. It may return
- * CUDA_ERROR_NOT_PERMITTED if run as an unprivileged user,
- * CUDA_ERROR_NOT_SUPPORTED on older Linux kernel versions.
- * On all other platforms, it is not supported and CUDA_ERROR_NOT_SUPPORTED
- * is returned.
- * Flag for ::cuMemHostRegister()
- */
 enum CU_MEMHOSTREGISTER_IOMEMORY = 0x04;
 
-/**
- * 2D memory copy parameters
- */
 struct CUDA_MEMCPY2D_st
 {
     size_t srcXInBytes; /**< Source X in bytes */

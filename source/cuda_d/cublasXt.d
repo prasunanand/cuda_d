@@ -11,10 +11,6 @@ import cuda_d.cuComplex;
 
 extern (C):
 
-/* import complex data type */
-
-/* __cplusplus */
-
 struct cublasXtContext;
 alias cublasXtHandle_t = cublasXtContext*;
 
@@ -35,14 +31,9 @@ enum cublasXtPinnedMemMode_t
     CUBLASXT_PINNING_ENABLED = 1
 }
 
-/* This routine allows to CUBLAS-XT to pin the Host memory if it find out that some of the matrix passed
-   are not pinned : Pinning/Unpinning the Host memory is still a costly operation
-   It is better if the user controls the memory on its own (by pinning/unpinning oly when necessary)
-*/
 cublasStatus_t cublasXtGetPinningMemMode (cublasXtHandle_t handle, cublasXtPinnedMemMode_t* mode);
 cublasStatus_t cublasXtSetPinningMemMode (cublasXtHandle_t handle, cublasXtPinnedMemMode_t mode);
 
-/* This routines is to provide a CPU Blas routines, used for too small sizes or hybrid computation */
 enum cublasXtOpType_t
 {
     CUBLASXT_FLOAT = 0,
