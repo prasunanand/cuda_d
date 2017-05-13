@@ -1288,7 +1288,3 @@ void cublasZtrmm (
     int lda,
     cuDoubleComplex* B,
     int ldb);
-
-/* __cplusplus */
-
-/* !defined(CUBLAS_H_) */

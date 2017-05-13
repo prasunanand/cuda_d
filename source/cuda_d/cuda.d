@@ -300,32 +300,7 @@ alias cuLinkAddFile = cuLinkAddFile_v2;
 /* __CUDA_API_VERSION_INTERNAL || __CUDA_API_VERSION >= 6050 */
 alias cuMemHostRegister = cuMemHostRegister_v2;
 alias cuGraphicsResourceSetMapFlags = cuGraphicsResourceSetMapFlags_v2;
-/* __CUDA_API_VERSION_INTERNAL || __CUDA_API_VERSION >= 6050 */
 
-/* __CUDA_API_VERSION && __CUDA_API_VERSION >= 3020 && __CUDA_API_VERSION < 4010 */
-/* __CUDA_API_VERSION_INTERNAL */
-
-/**
- * \file cuda.h
- * \brief Header file for the CUDA Toolkit application programming interface.
- *
- * \file cudaGL.h
- * \brief Header file for the OpenGL interoperability functions of the
- * low-level CUDA driver application programming interface.
- *
- * \file cudaD3D9.h
- * \brief Header file for the Direct3D 9 interoperability functions of the
- * low-level CUDA driver application programming interface.
- */
-
-/**
- * \defgroup CUDA_TYPES Data types used by CUDA driver
- * @{
- */
-
-/**
- * CUDA API version number
- */
 enum CUDA_VERSION = 7050;
 
 /**

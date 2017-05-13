@@ -685,7 +685,3 @@ cublasStatus_t cublasXtZtrmm (
     size_t ldb,
     cuDoubleComplex* C,
     size_t ldc);
-
-/* __cplusplus */
-
-/* !defined(CUBLAS_XT_H_) */

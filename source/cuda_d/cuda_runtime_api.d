@@ -13,11 +13,7 @@ import cuda_d.vector_types;
 
 extern (C):
 
-
-/** CUDA Runtime API Version */
 enum CUDART_VERSION = 7050;
-
-/* !defined(__CUDACC_INTEGRATED__) */
 
 extern (D) auto __CUDART_API_PTDS(T)(auto ref T api)
 {
