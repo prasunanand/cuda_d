@@ -1,2 +1,3 @@
-# cuBLAS_d
-D bindings for cuBLAS
+# cuda_d
+
+D bindings for CUDA
